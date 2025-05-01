@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { StoreButton, StoreButtons } from "@/components/ui/store-button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Apple, ChevronDown } from "lucide-react";
 
@@ -69,13 +70,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button size="lg" className="rounded-full px-8">
-            <Apple className="mr-2 h-5 w-5" />
-            Download for iOS
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-8">
-            Available on all platforms
-          </Button>
+          <div className="flex flex-col items-center">
+            <StoreButton storeName="App Store" />
+            <span className="text-sm text-gray-600 mt-2">for iPhone, iPad, and AppleWatch</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <StoreButton storeName="Mac App Store" />
+            <span className="text-sm text-gray-600 mt-2">for Mac</span>
+          </div>
         </motion.div>
       </motion.div>
       

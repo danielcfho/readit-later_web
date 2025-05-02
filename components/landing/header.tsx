@@ -36,7 +36,8 @@ export function Header() {
               href="/"
               className="flex items-center space-x-2 text-xl font-medium"
             >
-              <BookOpenText className="h-6 w-6" />
+              {/* <BookOpenText className="h-6 w-6" /> */}
+              <img src="/icon.svg" alt="ReadIt-Later Logo" className="h-8 w-8" />
               <span>ReadIt-Later</span>
             </Link>
 

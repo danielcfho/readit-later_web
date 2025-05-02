@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'ReadIt-Later | Save articles and websites to read later',
-  description: 'ReadIt-Later helps you save articles, links, and web content to read later on any device. Organize your reading list and enjoy distraction-free reading.',
+  description: 'ReadIt-Later helps you save articles, links, and web content to read later offline on any device. Organize your reading list and enjoy distraction-free reading.',
 };
 
 export default function RootLayout({

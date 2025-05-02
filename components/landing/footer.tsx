@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpenText, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 text-white mb-4">
-              <BookOpenText className="h-6 w-6" />
+              <img src="/icon.svg" alt="ReadIt-Later Logo" className="h-8 w-8" />
               <span className="text-xl font-medium">ReadIt-Later</span>
             </Link>
             <p className="text-sm text-gray-400">

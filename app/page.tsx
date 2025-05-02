@@ -12,8 +12,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
-      <KeyPerks />
       <DeviceShowcase />
+      <KeyPerks />
       <Footer />
       <ScrollToTop />
     </main>

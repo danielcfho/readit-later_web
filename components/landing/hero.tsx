@@ -60,7 +60,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           ReadIt-Later helps you save articles, links, and web content 
-          to read later on any device. Organize your reading list and enjoy 
+          to read later offline on any device. Organize your reading list and enjoy 
           distraction-free reading.
         </motion.p>
         
@@ -82,7 +82,7 @@ export function Hero() {
       </motion.div>
       
       <motion.div 
-        className="relative w-full max-w-4xl mx-auto mt-8 px-4"
+        className="relative w-full max-w-6xl mx-auto mt-8 px-4"
         style={{ y: y1, opacity }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -90,41 +90,13 @@ export function Hero() {
       >
         <div className="relative aspect-[16/9] w-full">
           <Image
-            src="https://images.pexels.com/photos/5077057/pexels-photo-5077057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="/images/hero.png"
             alt="ReadIt-Later App Interface"
             fill
-            className="object-cover rounded-xl shadow-2xl"
+            className="object-cover "
             priority
           />
         </div>
-        
-        <motion.div 
-          className="absolute -left-10 top-1/4 w-48 h-48 md:w-64 md:h-64"
-          style={{ y: y2 }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src="https://images.pexels.com/photos/5077045/pexels-photo-5077045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="ReadIt-Later on iPhone"
-              fill
-              className="object-cover rounded-xl shadow-xl"
-            />
-          </div>
-        </motion.div>
-        
-        <motion.div 
-          className="absolute -right-10 bottom-0 w-40 h-40 md:w-56 md:h-56"
-          style={{ y: y2 }}
-        >
-          <div className="relative w-full h-full">
-            <Image
-              src="https://images.pexels.com/photos/5077054/pexels-photo-5077054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt="ReadIt-Later on iPad"
-              fill
-              className="object-cover rounded-xl shadow-xl"
-            />
-          </div>
-        </motion.div>
       </motion.div>
       
       <motion.div 

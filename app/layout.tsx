@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ReadIt-Later | Save articles and websites to read later',
-  description: 'ReadIt-Later helps you save articles, links, and web content to read later offline on any device. Organize your reading list and enjoy distraction-free reading.',
+  title: 'dchome | Digital Solutions',
+  description: 'dchome provides digital solutions and applications for modern productivity and lifestyle.',
 };
 
 export default function RootLayout({

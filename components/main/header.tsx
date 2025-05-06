@@ -4,10 +4,16 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { BookOpenText } from "lucide-react";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function Header() {
+export function MainHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -36,9 +42,8 @@ export function Header() {
               href="/"
               className="flex items-center space-x-2 text-xl font-medium"
             >
-              {/* <BookOpenText className="h-6 w-6" /> */}
-              <img src="/icon.svg" alt="ReadIt-Later Logo" className="h-8 w-8" />
-              <span>ReadIt-Later</span>
+              <img src="/icon.svg" alt="dchome Logo" className="h-8 w-8" />
+              <span>dchome</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -49,20 +54,30 @@ export function Header() {
               >
                 Features
               </Link>
+              
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                  Apps <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>
+                    <Link href="/apps/readit-later" className="w-full">
+                      ReadIt-Later
+                    </Link>
+                  </DropdownMenuItem>
+                  {/* Add more apps here as needed */}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
               <Link
-                href="#perks"
+                href="#contact"
                 className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Key Perks
+                Contact
               </Link>
-              <Link
-                href="#devices"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                Devices
-              </Link>
+              
               <Button variant="default" size="sm">
-                Download Now
+                Get Started
               </Button>
             </nav>
 
@@ -113,22 +128,28 @@ export function Header() {
                 >
                   Features
                 </Link>
+                
+                <div className="py-2">
+                  <div className="text-base font-medium text-gray-700 mb-2">Apps</div>
+                  <Link
+                    href="/apps/readit-later"
+                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 pl-4 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    ReadIt-Later
+                  </Link>
+                </div>
+                
                 <Link
-                  href="#perks"
+                  href="#contact"
                   className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Key Perks
+                  Contact
                 </Link>
-                <Link
-                  href="#devices"
-                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Devices
-                </Link>
+                
                 <Button variant="default" size="sm" className="w-full">
-                  Download Now
+                  Get Started
                 </Button>
               </nav>
             </div>

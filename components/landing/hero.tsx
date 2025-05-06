@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <div 
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-blue-50 to-white flex flex-col justify-center items-center"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-blue-50 to-white flex flex-col justify-center items-center pt-24"
     >
       <div className="absolute inset-0 z-0">
         <motion.div 
@@ -42,7 +42,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="container mx-auto px-4 z-10 text-center relative"
+        className="container mx-auto px-4 z-10 text-center relative mt-16"
       >
         <motion.h1 
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight"

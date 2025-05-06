@@ -61,7 +61,7 @@ export function MainHeader() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <Link href="/apps/readit-later" className="w-full">
+                    <Link href="/readit-later" className="w-full">
                       ReadIt-Later
                     </Link>
                   </DropdownMenuItem>
@@ -132,7 +132,7 @@ export function MainHeader() {
                 <div className="py-2">
                   <div className="text-base font-medium text-gray-700 mb-2">Apps</div>
                   <Link
-                    href="/apps/readit-later"
+                    href="/readit-later"
                     className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 pl-4 block"
                     onClick={() => setMobileMenuOpen(false)}
                   >

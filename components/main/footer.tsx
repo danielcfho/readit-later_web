@@ -23,7 +23,7 @@ export function MainFooter() {
             <h3 className="text-lg font-medium text-white mb-4">Products</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/apps/readit-later" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/readit-later" className="text-gray-400 hover:text-white transition-colors">
                   ReadIt-Later
                 </Link>
               </li>

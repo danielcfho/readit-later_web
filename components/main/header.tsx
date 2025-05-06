@@ -61,7 +61,12 @@ export function MainHeader() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <Link href="/readit-later" className="w-full">
+                    <Link href="/readit-later" className="w-full flex items-center gap-2">
+                      <img 
+                        src="/images/readit-later_logo.svg" 
+                        alt="ReadIt-Later Logo" 
+                        className="h-5 w-5" 
+                      />
                       ReadIt-Later
                     </Link>
                   </DropdownMenuItem>

@@ -44,8 +44,14 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="container mx-auto px-4 z-10 text-center relative mt-16"
       >
+        <motion.p className="flex justify-center mb-5">
+          <img 
+            src="/images/readit-later_logo.png" 
+            alt="ReadIt-Later Logo" 
+          />
+        </motion.p>
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight"
+          className="text-4xl md:text-6xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -54,7 +60,7 @@ export function Hero() {
         </motion.h1>
         
         <motion.p 
-          className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto"
+          className="text-lg md:text-xl text-gray-700 mb-2 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -62,6 +68,7 @@ export function Hero() {
           ReadIt-Later helps you save articles, links, and web content 
           to read later offline on any device. Organize your reading list and enjoy 
           distraction-free reading.
+
         </motion.p>
         
         <motion.div 
@@ -82,7 +89,7 @@ export function Hero() {
       </motion.div>
       
       <motion.div 
-        className="relative w-full max-w-6xl mx-auto mt-8 px-4"
+        className="relative w-full max-w-6xl mx-auto mt-1 px-4"
         style={{ y: y1, opacity }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

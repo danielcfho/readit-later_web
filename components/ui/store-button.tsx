@@ -12,7 +12,7 @@ interface StoreButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 export function StoreButton({ 
   storeName, 
   className,
-  href = storeName === "App Store" ? "https://apps.apple.com/hk/app/readit-later/id6745271301" : "#",
+  href = "https://apps.apple.com/hk/app/readit-later/id6745271301" ,
   ...props 
 }: StoreButtonProps) {
   return (

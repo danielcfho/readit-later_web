@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Smartphone, Camera, Mic, Brain, Zap, Shield } from "lucide-react";
 
@@ -49,53 +50,36 @@ export function DeviceShowcase() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative mx-auto w-80 h-96">
-              {/* Phone Frame */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl">
-                {/* Screen */}
-                <div className="absolute inset-4 bg-gradient-to-br from-orange-400 to-red-500 rounded-[2.5rem] overflow-hidden">
-                  {/* App Interface Mockup */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-orange-100 to-white p-6">
-                    <div className="text-center mt-8">
-                      <div className="w-16 h-16 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                        <Camera className="h-8 w-8 text-orange-600" />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Wave Your Hand</h4>
-                      <p className="text-sm text-gray-600 mb-6">Get ready to learn &quot;wave&quot; in Spanish</p>
-                      
-                      {/* Action Cards */}
-                      <div className="space-y-3">
-                        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 shadow-sm">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium">English</span>
-                            <span className="text-lg font-bold text-gray-900">Wave</span>
-                          </div>
-                        </div>
-                        <div className="bg-orange-500 rounded-xl p-3 shadow-sm">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-white">Español</span>
-                            <span className="text-lg font-bold text-white">Saludar</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+            <div className="relative mx-auto max-w-sm">
+              {/* iPad Frame and Screenshot */}
+              <div className="relative">
+                {/* iPad Frame */}
+                <div className="relative aspect-[0.698] w-full bg-gray-800 rounded-[2rem] p-4 shadow-2xl">
+                  {/* iPad Screen */}
+                  <div className="relative w-full h-full bg-black rounded-[1.5rem] overflow-hidden">
+                    <Image
+                      src="/images/actionscam/actionscam_screenshot_ipad01.png"
+                      alt="ActionsCam iPad App Interface"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
+                  {/* Home Indicator */}
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-white/30 rounded-full"></div>
                 </div>
-                
-                {/* Home indicator */}
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white rounded-full"></div>
               </div>
               
-              {/* Floating elements */}
+              {/* Floating elements for visual enhancement */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-8 top-20 w-12 h-12 bg-orange-200 rounded-full opacity-60"
+                className="absolute -right-4 top-10 w-8 h-8 bg-orange-200 rounded-full opacity-40"
               />
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-6 bottom-32 w-8 h-8 bg-red-200 rounded-full opacity-60"
+                className="absolute -left-4 bottom-20 w-6 h-6 bg-red-200 rounded-full opacity-40"
               />
             </div>
           </motion.div>

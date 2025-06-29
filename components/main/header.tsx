@@ -70,6 +70,16 @@ export function MainHeader() {
                       ReadIt-Later
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/actionscam" className="w-full flex items-center gap-2">
+                      <img 
+                        src="/images/actionscam_logo.png" 
+                        alt="ActionsCam Logo" 
+                        className="h-5 w-5" 
+                      />
+                      ActionsCam
+                    </Link>
+                  </DropdownMenuItem>
                   {/* Add more apps here as needed */}
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -142,6 +152,13 @@ export function MainHeader() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     ReadIt-Later
+                  </Link>
+                  <Link
+                    href="/actionscam"
+                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 pl-4 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    ActionsCam
                   </Link>
                 </div>
                 

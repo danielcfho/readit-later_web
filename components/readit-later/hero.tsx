@@ -97,7 +97,7 @@ export function Hero() {
       >
         <div className="relative aspect-[16/9] w-full">
           <Image
-            src="/images/hero.png"
+            src="/images/readit-later_hero.png"
             alt="ReadIt-Later App Interface"
             fill
             className="object-cover "

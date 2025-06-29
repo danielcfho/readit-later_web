@@ -1,4 +1,4 @@
-import { Header } from "@/components/actionscam/header";
+import { Header } from "@/components/shared/header";
 import { Hero } from "@/components/actionscam/hero";
 import { Features } from "@/components/actionscam/features";
 import { KeyPerks } from "@/components/actionscam/key-perks";

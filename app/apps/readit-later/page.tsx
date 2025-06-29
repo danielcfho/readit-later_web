@@ -1,4 +1,4 @@
-import { Header } from "@/components/readit-later/header";
+import { Header } from "@/components/shared/header";
 import { Hero } from "@/components/readit-later/hero";
 import { Features } from "@/components/readit-later/features";
 import { KeyPerks } from "@/components/readit-later/key-perks";

@@ -11,16 +11,16 @@ export function Footer() {
     <footer id="download" className="bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
           {/* Left side - Download CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            className="text-center"
           >
-            <div className="flex items-center justify-center lg:justify-start mb-6">
+            <div className="flex items-center justify-center mb-6">
               <Image
                 src="/images/actionscam_logo.png"
                 alt="ActionsCam Logo"
@@ -38,12 +38,12 @@ export function Footer() {
               </span>
             </h2>
             
-            <p className="text-lg text-gray-300 mb-8 max-w-lg">
+            <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
               Transform your language learning experience with the power of movement. 
               Download ActionsCam and start speaking a new language with every action.
             </p>
             
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center">
               <StoreButton 
                 storeName="App Store" 
                 href="https://apps.apple.com/hk/app/actionscam"

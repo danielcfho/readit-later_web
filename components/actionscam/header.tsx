@@ -73,7 +73,7 @@ export function Header() {
             size="sm"
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0"
           >
-            <Link href="https://apps.apple.com/hk/app/actionscam" target="_blank" rel="noopener noreferrer">
+            <Link href="https://apps.apple.com/hk/app/actionscam/id6747068551" target="_blank" rel="noopener noreferrer">
               Get App
             </Link>
           </Button>

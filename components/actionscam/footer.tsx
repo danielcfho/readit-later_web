@@ -46,7 +46,7 @@ export function Footer() {
             <div className="flex flex-col items-center">
               <StoreButton 
                 storeName="App Store" 
-                href="https://apps.apple.com/hk/app/actionscam"
+                href="https://apps.apple.com/hk/app/actionscam/id6747068551"
                 className="mb-4 hover:scale-105 transition-transform duration-300"
               />
               <p className="text-sm text-gray-400">

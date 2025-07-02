@@ -159,19 +159,17 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <div className="relative aspect-[16/10] w-full bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-2xl overflow-hidden">
-          {/* Placeholder for app screenshot/demo */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-32 h-32 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center mb-4 mx-auto"
-              >
-                <Play className="h-12 w-12 text-white" />
-              </motion.div>
-              <p className="text-gray-600 font-medium">App Demo Coming Soon</p>
-            </div>
-          </div>
+          {/* ActionsCam Demo Video */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/videos/ActionsCam_Web.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </motion.div>
       

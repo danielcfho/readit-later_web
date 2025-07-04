@@ -55,6 +55,13 @@ export function Header() {
                 Features
               </Link>
               
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                Blog
+              </Link>
+              
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
                   Apps <ChevronDown className="ml-1 h-4 w-4" />
@@ -142,6 +149,14 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Features
+                </Link>
+                
+                <Link
+                  href="/blog"
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
                 </Link>
                 
                 <div className="py-2">

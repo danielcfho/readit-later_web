@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Highlight.js 語法高亮樣式 */
+@import 'highlight.js/styles/github.css';
+
 :root {
   --foreground-rgb: 48, 51, 54;
   --background-start-rgb: 214, 219, 220;

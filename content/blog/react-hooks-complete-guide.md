@@ -6,7 +6,7 @@ category: "React"
 tags: ["React", "Hooks", "Frontend", "JavaScript"]
 author: "dchome"
 featured: false
-image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
 # React Hooks Complete Guide

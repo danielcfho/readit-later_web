@@ -6,7 +6,7 @@ category: "Tailwind CSS"
 tags: ["Tailwind CSS", "CSS", "Frontend", "Tips"]
 author: "dchome"
 featured: false
-image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
 # Tailwind CSS Tips

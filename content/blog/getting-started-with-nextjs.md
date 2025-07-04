@@ -6,7 +6,7 @@ category: "Next.js"
 tags: ["Next.js", "React", "SSR", "Web Development"]
 author: "dchome"
 featured: false
-image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+image: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
 # Getting Started with Next.js

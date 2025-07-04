@@ -76,17 +76,24 @@ export function BlogTOC({ content }: BlogTOCProps) {
 
   return (
     <div className="sticky top-24 space-y-4">
-      <div className="bg-white rounded-lg border p-4">
-        <h3 className="font-semibold text-gray-900 mb-3">目錄</h3>
+      <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 p-6 shadow-lg">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center">
+            <span className="text-white font-bold text-xs">≡</span>
+          </div>
+          <h3 className="font-bold text-gray-900">Table of Contents</h3>
+        </div>
         <nav className="space-y-2">
           {toc.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToHeading(item.id)}
-              className={`block w-full text-left text-sm hover:text-blue-600 transition-colors ${
-                activeId === item.id ? 'text-blue-600 font-medium' : 'text-gray-600'
+              className={`block w-full text-left text-sm hover:text-blue-600 transition-colors rounded-md px-2 py-1 ${
+                activeId === item.id 
+                  ? 'text-blue-600 font-medium bg-blue-50 border-l-2 border-blue-600' 
+                  : 'text-gray-600 hover:bg-gray-50'
               }`}
-              style={{ paddingLeft: `${(item.level - 1) * 12}px` }}
+              style={{ paddingLeft: `${(item.level - 1) * 12 + 8}px` }}
             >
               {item.text}
             </button>
@@ -98,10 +105,10 @@ export function BlogTOC({ content }: BlogTOCProps) {
         variant="outline"
         size="sm"
         onClick={scrollToTop}
-        className="w-full"
+        className="w-full bg-white/80 backdrop-blur-sm border-gray-100 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600"
       >
         <ChevronUp className="h-4 w-4 mr-2" />
-        回到頂部
+        Back to Top
       </Button>
     </div>
   );

@@ -59,33 +59,33 @@ export function BlogFilters({
   const hasActiveFilters = selectedCategory || selectedTag || searchQuery || (selectedDateRange && selectedDateRange !== 'all');
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
+    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-gray-100 p-6 mb-8 sticky top-6 z-10">
       <div className="flex flex-col lg:flex-row gap-4">
-        {/* 搜尋 */}
+        {/* Search */}
         <form onSubmit={handleSearch} className="flex-1">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <Input
               type="text"
-              placeholder="搜尋文章..."
+              placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
+              className="pl-10 border-gray-200 focus:border-blue-400 focus:ring-blue-400"
             />
           </div>
         </form>
 
-        {/* 分類篩選 */}
+        {/* Category Filter */}
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="justify-start">
+            <Button variant="outline" className="justify-start border-gray-200 hover:border-blue-400">
               <Filter className="h-4 w-4 mr-2" />
-              {selectedCategory || "選擇分類"}
+              {selectedCategory || "Select Category"}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-56">
             <div className="space-y-2">
-              <h4 className="font-medium">分類</h4>
+              <h4 className="font-medium">Categories</h4>
               <div className="space-y-1">
                 {categories.map((category) => (
                   <Button
@@ -105,17 +105,17 @@ export function BlogFilters({
           </PopoverContent>
         </Popover>
 
-        {/* 標籤篩選 */}
+        {/* Tag Filter */}
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="justify-start">
+            <Button variant="outline" className="justify-start border-gray-200 hover:border-blue-400">
               <Filter className="h-4 w-4 mr-2" />
-              {selectedTag || "選擇標籤"}
+              {selectedTag || "Select Tag"}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-56">
             <div className="space-y-2">
-              <h4 className="font-medium">標籤</h4>
+              <h4 className="font-medium">Tags</h4>
               <div className="space-y-1 max-h-64 overflow-y-auto">
                 {tags.map((tag) => (
                   <Button
@@ -135,60 +135,60 @@ export function BlogFilters({
           </PopoverContent>
         </Popover>
 
-        {/* 日期篩選 */}
+        {/* Date Filter */}
         {onDateFilter && (
           <Select 
             value={selectedDateRange || undefined} 
             onValueChange={(value) => onDateFilter(value || null)}
           >
-            <SelectTrigger className="w-48">
+            <SelectTrigger className="w-48 border-gray-200 hover:border-blue-400">
               <Calendar className="h-4 w-4 mr-2" />
-              <SelectValue placeholder="選擇時間範圍" />
+              <SelectValue placeholder="Select Date Range" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">全部時間</SelectItem>
-              <SelectItem value="last-week">最近一週</SelectItem>
-              <SelectItem value="last-month">最近一個月</SelectItem>
-              <SelectItem value="last-3-months">最近三個月</SelectItem>
-              <SelectItem value="last-year">最近一年</SelectItem>
+              <SelectItem value="all">All Time</SelectItem>
+              <SelectItem value="last-week">Last Week</SelectItem>
+              <SelectItem value="last-month">Last Month</SelectItem>
+              <SelectItem value="last-3-months">Last 3 Months</SelectItem>
+              <SelectItem value="last-year">Last Year</SelectItem>
             </SelectContent>
           </Select>
         )}
 
-        {/* 清除篩選 */}
+        {/* Clear Filters */}
         {hasActiveFilters && (
-          <Button variant="outline" onClick={clearFilters}>
+          <Button variant="outline" onClick={clearFilters} className="border-gray-200 hover:border-red-400 hover:text-red-600">
             <X className="h-4 w-4 mr-2" />
-            清除
+            Clear
           </Button>
         )}
       </div>
 
-      {/* 顯示當前篩選 */}
+      {/* Active Filters Display */}
       {hasActiveFilters && (
         <div className="mt-4 flex flex-wrap gap-2">
           {searchQuery && (
-            <Badge variant="secondary">
-              搜尋: {searchQuery}
+            <Badge variant="secondary" className="bg-blue-50 text-blue-700 border-blue-200">
+              Search: {searchQuery}
             </Badge>
           )}
           {selectedCategory && (
-            <Badge variant="secondary">
-              分類: {selectedCategory}
+            <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200">
+              Category: {selectedCategory}
             </Badge>
           )}
           {selectedTag && (
-            <Badge variant="secondary">
-              標籤: #{selectedTag}
+            <Badge variant="secondary" className="bg-purple-50 text-purple-700 border-purple-200">
+              Tag: #{selectedTag}
             </Badge>
           )}
           {selectedDateRange && selectedDateRange !== 'all' && (
-            <Badge variant="secondary">
-              時間: {
-                selectedDateRange === 'last-week' ? '最近一週' :
-                selectedDateRange === 'last-month' ? '最近一個月' :
-                selectedDateRange === 'last-3-months' ? '最近三個月' :
-                selectedDateRange === 'last-year' ? '最近一年' : selectedDateRange
+            <Badge variant="secondary" className="bg-orange-50 text-orange-700 border-orange-200">
+              Time: {
+                selectedDateRange === 'last-week' ? 'Last Week' :
+                selectedDateRange === 'last-month' ? 'Last Month' :
+                selectedDateRange === 'last-3-months' ? 'Last 3 Months' :
+                selectedDateRange === 'last-year' ? 'Last Year' : selectedDateRange
               }
             </Badge>
           )}

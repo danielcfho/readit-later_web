@@ -33,8 +33,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       tags={allTags}
       featuredPosts={featuredPosts}
       initialCategory={category}
-      pageTitle={`分類：${category}`}
-      pageDescription={`瀏覽 ${category} 分類下的所有文章`}
+      pageTitle={`Category: ${category}`}
+      pageDescription={`Browse all articles in the ${category} category`}
     />
   );
 }
@@ -44,6 +44,6 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   
   return {
     title: `${category} - Blog`,
-    description: `瀏覽 ${category} 分類下的所有文章`,
+    description: `Browse all articles in the ${category} category`,
   };
 }

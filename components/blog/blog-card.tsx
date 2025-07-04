@@ -14,7 +14,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post, featured = false }: BlogCardProps) {
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('zh-TW', {
+    return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -27,7 +27,8 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ${
+      whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+      className={`bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:border-blue-200 transition-all duration-300 ${
         featured ? 'md:flex md:flex-row' : ''
       }`}
     >
@@ -40,7 +41,9 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
         />
         {post.featured && (
           <div className="absolute top-4 left-4">
-            <Badge variant="destructive">精選</Badge>
+            <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+              ★ Featured
+            </Badge>
           </div>
         )}
       </div>
@@ -91,10 +94,10 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
         <div className="mt-4">
           <Link 
             href={`/blog/${post.slug}`}
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm group transition-colors"
           >
-            閱讀更多
-            <ArrowRight className="h-4 w-4" />
+            Read More
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

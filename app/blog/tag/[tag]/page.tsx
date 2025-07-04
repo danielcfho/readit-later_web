@@ -33,8 +33,8 @@ export default function TagPage({ params }: TagPageProps) {
       tags={allTags}
       featuredPosts={featuredPosts}
       initialTag={tag}
-      pageTitle={`標籤：${tag}`}
-      pageDescription={`瀏覽 ${tag} 標籤下的所有文章`}
+      pageTitle={`Tag: ${tag}`}
+      pageDescription={`Browse all articles tagged with ${tag}`}
     />
   );
 }
@@ -44,6 +44,6 @@ export async function generateMetadata({ params }: TagPageProps) {
   
   return {
     title: `${tag} - Blog`,
-    description: `瀏覽 ${tag} 標籤下的所有文章`,
+    description: `Browse all articles tagged with ${tag}`,
   };
 }

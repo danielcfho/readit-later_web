@@ -1,19 +1,19 @@
 ---
-title: "React Hooks 完整指南"
+title: "React Hooks Complete Guide"
 date: "2024-11-25"
-excerpt: "深入了解 React Hooks，掌握現代 React 開發的核心概念"
-category: "技術教學"
-tags: ["React", "Hooks", "JavaScript", "前端開發"]
+excerpt: "A deep dive into React Hooks and the core concepts of modern React development."
+category: "Technical Tutorial"
+tags: ["React", "Hooks", "JavaScript", "Frontend Development"]
 author: "dchome"
 featured: false
 image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
-# React Hooks 完整指南
+# React Hooks Complete Guide
 
-React Hooks 是 React 16.8 引入的新特性，讓你在不撰寫 class 的情況下使用 state 及其他 React 功能。
+React Hooks, introduced in React 16.8, allow you to use state and other React features without writing classes.
 
-## 基本 Hooks
+## Basic Hooks
 
 ### useState Hook
 ```jsx
@@ -24,9 +24,9 @@ function Counter() {
 
   return (
     <div>
-      <p>你點擊了 {count} 次</p>
+      <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>
-        點擊我
+        Click me
       </button>
     </div>
   );
@@ -48,9 +48,9 @@ function UserProfile({ userId }) {
     }
 
     fetchUser();
-  }, [userId]); // 依賴陣列
+  }, [userId]); // Dependency array
 
-  if (!user) return <div>載入中...</div>;
+  if (!user) return <div>Loading...</div>;
 
   return (
     <div>
@@ -61,11 +61,11 @@ function UserProfile({ userId }) {
 }
 ```
 
-## 進階 Hooks
+## Advanced Hooks
 
 ### useContext Hook
 ```jsx
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const ThemeContext = createContext();
 
@@ -90,14 +90,16 @@ function ThemedButton() {
       }}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      切換主題
+      Toggle Theme
     </button>
   );
 }
 ```
 
-### 自定義 Hook
+### Custom Hook
 ```jsx
+import { useState } from 'react';
+
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
@@ -120,7 +122,7 @@ function useLocalStorage(key, initialValue) {
   return [storedValue, setValue];
 }
 
-// 使用自定義 Hook
+// Using the custom hook
 function Settings() {
   const [name, setName] = useLocalStorage('name', '');
 
@@ -128,17 +130,17 @@ function Settings() {
     <input
       value={name}
       onChange={(e) => setName(e.target.value)}
-      placeholder="輸入你的名字"
+      placeholder="Enter your name"
     />
   );
 }
 ```
 
-## Hooks 使用規則
+## Rules of Hooks
 
-1. **只在最上層呼叫 Hook**：不要在迴圈、條件或巢狀函數中呼叫 Hook
-2. **只在 React 函數中呼叫 Hook**：不要在一般的 JavaScript 函數中呼叫 Hook
+1. **Only call Hooks at the top level**: Don’t call Hooks inside loops, conditions, or nested functions.
+2. **Only call Hooks from React functions**: Don’t call Hooks from regular JavaScript functions.
 
-## 結論
+## Conclusion
 
-React Hooks 提供了一種更簡潔、更靈活的方式來管理元件狀態和生命週期。透過組合不同的 Hook，你可以建立強大且可重用的邏輯。
+React Hooks provide a simpler and more flexible way to manage component state and lifecycle. By combining different Hooks, you can build powerful and reusable logic for your React applications.

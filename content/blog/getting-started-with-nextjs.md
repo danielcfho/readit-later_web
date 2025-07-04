@@ -1,88 +1,72 @@
 ---
-title: "開始使用 Next.js 建立現代網站"
-date: "2024-12-01"
-excerpt: "學習如何使用 Next.js 建立快速、現代的 React 應用程式"
-category: "技術教學"
-tags: ["Next.js", "React", "JavaScript", "Web Development"]
+title: "Getting Started with Next.js"
+date: "2024-09-20"
+excerpt: "A beginner's guide to building modern web applications with Next.js."
+category: "Next.js"
+tags: ["Next.js", "React", "SSR", "Web Development"]
 author: "dchome"
-featured: true
-image: "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+featured: false
+image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
-# 開始使用 Next.js 建立現代網站
+# Getting Started with Next.js
 
-Next.js 是一個強大的 React 框架，提供了許多開箱即用的功能，讓開發者能夠快速建立高效能的網站應用程式。
+Next.js is a powerful React framework for building fast, SEO-friendly web applications. This guide will help you get started with the basics of Next.js.
 
-## 為什麼選擇 Next.js？
+## Why Next.js?
 
-Next.js 提供了以下關鍵特性：
+Next.js offers the following key features:
 
-### 1. 伺服器端渲染 (SSR)
-```javascript
-// pages/blog/[slug].js
-export async function getServerSideProps(context) {
-  const { slug } = context.params;
-  const post = await fetchPost(slug);
-  
-  return {
-    props: {
-      post,
-    },
-  };
-}
-```
+- **Server-Side Rendering (SSR)**: Renders pages on each request, ensuring fresh data.
+- **Static Site Generation (SSG)**: Pre-renders pages at build time, serving static HTML.
+- **API Routes**: Build your API directly into your Next.js app.
+- **File-based Routing**: Create pages by adding files to the `pages` directory.
+- **Built-in CSS & Sass Support**: Import CSS and Sass files directly in your components.
 
-### 2. 靜態網站生成 (SSG)
-```javascript
-export async function getStaticProps() {
-  const posts = await fetchPosts();
-  
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 60, // 每 60 秒重新生成
-  };
-}
-```
+## Installation
 
-### 3. 自動程式碼分割
-Next.js 會自動將你的應用程式分割成較小的 JavaScript 包，提升載入效能。
+To create a new Next.js app, run the following commands:
 
-## 建立你的第一個 Next.js 專案
-
-1. 安裝 Next.js：
 ```bash
-npx create-next-app@latest my-app
-cd my-app
+npx create-next-app@latest my-next-app
+cd my-next-app
 npm run dev
 ```
 
-2. 建立第一個頁面：
-```jsx
-// pages/about.js
-export default function About() {
-  return (
-    <div>
-      <h1>關於我們</h1>
-      <p>歡迎來到我們的網站！</p>
-    </div>
-  );
-}
-```
+## Pages & Routing
 
-## 路由系統
+Next.js uses a file-based routing system:
 
-Next.js 使用檔案系統為基礎的路由：
+- Create files in the `pages/` directory to define routes.
+- Dynamic routes can be created using brackets, e.g., `[id].js`, `[slug].js`.
 
-- `pages/index.js` → `/`
-- `pages/about.js` → `/about`
-- `pages/blog/[slug].js` → `/blog/:slug`
+## Data Fetching
 
-## 最佳實踐
+Next.js provides several methods for data fetching:
 
-1. **使用 TypeScript** 提升程式碼品質
-2. **優化圖片** 使用 Next.js Image 元件
-3. **SEO 優化** 使用 Head 元件設定 meta 標籤
+- `getStaticProps`: Fetch data at build time for static generation.
+- `getServerSideProps`: Fetch data on each request for server-side rendering.
+- `getStaticPaths`: Generate dynamic routes for static pages.
 
-Next.js 是現代網站開發的絕佳選擇，結合了效能、開發體驗和 SEO 優化等優勢。
+## API Routes
+
+You can create API endpoints within your Next.js app:
+
+- Create files in `pages/api/` to define API routes.
+- Example: `pages/api/hello.js` becomes `/api/hello`.
+
+## Deploying
+
+Deploying your Next.js app is simple:
+
+- You can deploy to Vercel with one click.
+- Next.js also supports static export and custom server setups.
+
+## Resources
+
+For more information and learning resources, check out:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+
+Next.js makes it easy to build modern, high-performance web applications with React.

@@ -206,3 +206,9 @@
     padding-left: 1em;
   }
 }
+
+/* 強制將 pre 元素的 padding 和 margin 設為 0 */
+pre {
+  padding: 0 !important;
+  margin: 0 !important;
+}

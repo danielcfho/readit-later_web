@@ -51,7 +51,7 @@ export default function BlogPostClient({
       }
 
       return (
-        <div className="relative my-6">
+        <div className="relative">
           <div className="absolute top-3 right-3 z-10">
             <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-mono">
               {language || 'code'}

@@ -136,16 +136,6 @@ export default function BlogPostClient({
                   </Link>
                 </div>
 
-                {/* Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                  {post.title}
-                </h1>
-
-                {/* Excerpt */}
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  {post.excerpt}
-                </p>
-
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {post.tags.map((tag) => (
@@ -157,6 +147,11 @@ export default function BlogPostClient({
                     </Link>
                   ))}
                 </div>
+
+                {/* Excerpt */}
+                <blockquote className="text-ellipsis italic  text-gray-400 mb-8 leading-relaxed">
+                  {post.excerpt}
+                </blockquote>
 
                 {/* Article Content */}
                 <div className="prose prose-lg max-w-none">

@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
@@ -79,11 +79,24 @@ export function getPostBySlug(slug: string): BlogPost | null {
 }
 
 export async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark()
-    .use(html, { sanitize: false })
-    .use(rehypeHighlight)
-    .process(markdown);
-  return result.toString();
+  try {
+    // Remove the first H1 title from markdown content to avoid duplication
+    // since it's already displayed in the header
+    const lines = markdown.split('\n');
+    const contentStartIndex = lines.findIndex(line => line.trim().startsWith('# '));
+    const processedMarkdown = contentStartIndex !== -1 
+      ? lines.slice(contentStartIndex + 1).join('\n').trim()
+      : markdown;
+    
+    const result = await remark()
+      .use(remarkGfm)
+      .use(html, { sanitize: false })
+      .process(processedMarkdown);
+    return result.toString();
+  } catch (error) {
+    console.error('Markdown processing error:', error);
+    return `<p>Error processing markdown content</p>`;
+  }
 }
 
 export function getFeaturedPosts(limit?: number): BlogPost[] {

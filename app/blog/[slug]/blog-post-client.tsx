@@ -114,7 +114,7 @@ export default function BlogPostClient({
 
                 {/* Article Content */}
                 <div 
-                  className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-code:bg-blue-50 prose-code:text-blue-800 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-800 prose-blockquote:border-l-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:px-4 prose-blockquote:py-2"
+                  className="prose prose-lg max-w-none"
                   dangerouslySetInnerHTML={{ __html: htmlContent }}
                 />
               </div>

@@ -22,7 +22,7 @@ export function Footer() {
           >
             <div className="flex items-center justify-center mb-6">
               <Image
-                src="/images/actionscam_logo.png"
+                src="/images/actionscam/actionscam_logo.png"
                 alt="ActionsCam Logo"
                 width={48}
                 height={48}

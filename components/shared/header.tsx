@@ -70,7 +70,7 @@ export function Header() {
                   <DropdownMenuItem>
                     <Link href="/apps/readit-later" className="w-full flex items-center gap-2">
                       <img 
-                        src="/images/readit-later_logo.svg" 
+                        src="/images/readit-later/readit-later_logo.svg" 
                         alt="ReadIt-Later Logo" 
                         className="h-5 w-5" 
                       />
@@ -80,7 +80,7 @@ export function Header() {
                   <DropdownMenuItem>
                     <Link href="/apps/actionscam" className="w-full flex items-center gap-2">
                       <img 
-                        src="/images/actionscam_logo.png" 
+                        src="/images/actionscam/actionscam_logo.png" 
                         alt="ActionsCam Logo" 
                         className="h-5 w-5" 
                       />

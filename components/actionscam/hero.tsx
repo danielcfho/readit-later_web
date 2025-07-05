@@ -74,7 +74,7 @@ export function Hero() {
         <motion.div className="flex justify-center mb-6">
           <div className="relative">
             <Image
-              src="/images/actionscam_logo.png"
+              src="/images/actionscam/actionscam_logo.png"
               alt="ActionsCam Logo"
               width={120}
               height={120}

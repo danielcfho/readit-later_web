@@ -46,7 +46,7 @@ export function Hero() {
       >
         <motion.p className="flex justify-center mb-5">
           <img 
-            src="/images/readit-later_logo.png" 
+            src="/images/readit-later/readit-later_logo.png" 
             alt="ReadIt-Later Logo" 
           />
         </motion.p>
@@ -97,7 +97,7 @@ export function Hero() {
       >
         <div className="relative aspect-[16/9] w-full">
           <Image
-            src="/images/readit-later_hero.png"
+            src="/images/readit-later/readit-later_hero.png"
             alt="ReadIt-Later App Interface"
             fill
             className="object-cover "

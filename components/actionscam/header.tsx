@@ -38,7 +38,7 @@ export function Header() {
             className="flex items-center space-x-2 text-xl font-medium text-gray-900 hover:text-orange-600 transition-colors"
           >
             <Image
-              src="/images/actionscam_logo.png"
+              src="/images/actionscam/actionscam_logo.png"
               alt="ActionsCam Logo"
               width={32}
               height={32}

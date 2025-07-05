@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import remarkGfm from 'remark-gfm';
 import { BlogPost } from "@/lib/blog/posts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,13 +17,11 @@ import { BlogFooter } from "@/components/blog/blog-footer";
 
 interface BlogPostClientProps {
   post: BlogPost;
-  htmlContent: string;
   relatedPosts: BlogPost[];
 }
 
 export default function BlogPostClient({
   post,
-  htmlContent,
   relatedPosts,
 }: BlogPostClientProps) {
   const formatDate = (dateString: string) => {
@@ -28,6 +30,50 @@ export default function BlogPostClient({
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  // Custom components for ReactMarkdown
+  const components = {
+    code({ className, children, ...props }: any) {
+      const match = /language-(\w+)/.exec(className || '');
+      const language = match ? match[1] : '';
+      const isInline = !className;
+      
+      if (isInline) {
+        return (
+          <code 
+            className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono"
+            {...props}
+          >
+            {children}
+          </code>
+        );
+      }
+
+      return (
+        <div className="relative my-6">
+          <div className="absolute top-3 right-3 z-10">
+            <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-mono">
+              {language || 'code'}
+            </span>
+          </div>
+          <SyntaxHighlighter
+            style={oneDark}
+            language={language || 'text'}
+            PreTag="div"
+            className="rounded-lg !mt-0 !mb-0"
+            customStyle={{
+              margin: 0,
+              borderRadius: '0.5rem',
+              fontSize: '0.875rem',
+              lineHeight: '1.5',
+            }}
+          >
+            {String(children).replace(/\n$/, '')}
+          </SyntaxHighlighter>
+        </div>
+      );
+    },
   };
 
   return (
@@ -113,10 +159,14 @@ export default function BlogPostClient({
                 </div>
 
                 {/* Article Content */}
-                <div 
-                  className="prose prose-lg max-w-none"
-                  dangerouslySetInnerHTML={{ __html: htmlContent }}
-                />
+                <div className="prose prose-lg max-w-none">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={components}
+                  >
+                    {post.content?.replace(/^# .*\n/, '') || ''}
+                  </ReactMarkdown>
+                </div>
               </div>
             </motion.article>
 

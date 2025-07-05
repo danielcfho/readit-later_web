@@ -6,7 +6,6 @@ import { BlogPost } from "@/lib/blog/posts";
 
 interface BlogPostWithHeaderProps {
   post: BlogPost;
-  htmlContent: string;
   relatedPosts: BlogPost[];
 }
 

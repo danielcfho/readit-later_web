@@ -12,7 +12,7 @@ const devices = [
     id: "iphone",
     name: "iPhone",
     icon: <Smartphone className="h-5 w-5" />,
-    image: "https://images.pexels.com/photos/5077057/pexels-photo-5077057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "/images/readit-later/model_iphone.png",
     features: [
       "Quick save from share menu",
       "Customizable reading view",
@@ -24,7 +24,7 @@ const devices = [
     id: "ipad",
     name: "iPad",
     icon: <Tablet className="h-5 w-5" />,
-    image: "https://images.pexels.com/photos/5077054/pexels-photo-5077054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "/images/readit-later/model_ipad.png",
     features: [
       "Split-screen compatibility",
       "Enhanced reading layout",
@@ -36,7 +36,7 @@ const devices = [
     id: "mac",
     name: "Mac",
     icon: <Laptop className="h-5 w-5" />,
-    image: "https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "/images/readit-later/model_mac.png",
     features: [
       "Browser extension integration",
       "Keyboard shortcuts",
@@ -48,7 +48,7 @@ const devices = [
     id: "watch",
     name: "Watch",
     icon: <Watch className="h-5 w-5" />,
-    image: "https://images.pexels.com/photos/5077045/pexels-photo-5077045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "/images/readit-later/model_watch.png",
     features: [
       "Quick reference on the go",
       "Listen to articles with audio",
@@ -181,9 +181,7 @@ export function DeviceShowcase() {
                         }`}
                       >
                         <div 
-                          className={`relative w-full h-full overflow-hidden ${
-                            device.id === "watch" ? "rounded-full" : "rounded-2xl"
-                          } shadow-2xl`}
+                          className={`relative w-full h-full overflow-hidden `}
                         >
                           <Image
                             src={device.image}
@@ -192,22 +190,6 @@ export function DeviceShowcase() {
                             className="object-cover"
                           />
                         </div>
-                        
-                        {device.id === "iphone" && (
-                          <div className="absolute -inset-1 border-[14px] border-black rounded-[2.5rem] pointer-events-none"></div>
-                        )}
-                        
-                        {device.id === "ipad" && (
-                          <div className="absolute -inset-1 border-[8px] border-black rounded-2xl pointer-events-none"></div>
-                        )}
-                        
-                        {device.id === "mac" && (
-                          <div className="absolute -inset-y-1 -inset-x-2 border-t-[8px] border-x-[8px] border-b-[12px] border-gray-800 rounded-xl pointer-events-none"></div>
-                        )}
-                        
-                        {device.id === "watch" && (
-                          <div className="absolute -inset-2 border-[10px] border-gray-800 rounded-full pointer-events-none"></div>
-                        )}
                       </motion.div>
                     </AnimatePresence>
                   </div>

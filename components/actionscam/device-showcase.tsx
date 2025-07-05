@@ -54,7 +54,6 @@ export function DeviceShowcase() {
               {/* iPad Frame and Screenshot */}
               <div className="relative">
                 {/* iPad Frame */}
-                <div className="relative aspect-[0.698] w-full bg-gray-800 rounded-[2rem] p-4 shadow-2xl">
                   {/* iPad Screen */}
                   <div className="relative w-full h-full bg-black rounded-[1.5rem] overflow-hidden">
                     <Image
@@ -67,7 +66,6 @@ export function DeviceShowcase() {
                   </div>
                   {/* Home Indicator */}
                   <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-white/30 rounded-full"></div>
-                </div>
               </div>
               
               {/* Floating elements for visual enhancement */}

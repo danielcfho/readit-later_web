@@ -1,5 +1,5 @@
 ---
-title: "AI on Your Phone: Smarts in Your Pocket, No Cloud Needed!"
+title: "AI on Your Phone: Smarts in Your Pocket!"
 date: 2025-07-06
 description: "A simple, modern guide to running AI right on your phone—why it matters, how it works, and what’s cool about it."
 tags:

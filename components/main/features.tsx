@@ -7,28 +7,28 @@ import { Layers, Shield, Zap, Globe } from "lucide-react";
 
 const features = [
   {
-    icon: <Layers className="h-10 w-10 text-blue-500" />,
-    title: "Multiple Applications",
+    icon: <Globe className="h-10 w-10 text-blue-500" />,
+    title: "什麼是 Edge AI？",
     description:
-      "Access a suite of productivity and lifestyle applications designed to enhance your digital experience.",
-  },
-  {
-    icon: <Shield className="h-10 w-10 text-indigo-500" />,
-    title: "Secure & Private",
-    description:
-      "All our applications prioritize your privacy and security with industry-standard protections.",
+      "Edge AI 指的是將 AI 運算（特別是推論）直接在裝置端或邊緣伺服器上執行，而非傳送到雲端。這讓資料能在本地即時處理，提升效率與隱私。",
   },
   {
     icon: <Zap className="h-10 w-10 text-purple-500" />,
-    title: "Fast & Efficient",
+    title: "主要優勢",
     description:
-      "Optimized for performance, our apps help you accomplish more in less time.",
+      "極低延遲回應、可離線運作、增強隱私與安全、節省頻寬與雲端成本、降低能耗，提升整體效率。",
   },
   {
-    icon: <Globe className="h-10 w-10 text-cyan-500" />,
-    title: "Cross-Platform",
+    icon: <Shield className="h-10 w-10 text-indigo-500" />,
+    title: "技術挑戰",
     description:
-      "Use our applications across all your devices with seamless synchronization.",
+      "裝置資源有限（算力、記憶體）、分散式模型管理與更新困難、邊緣安全風險、多樣硬體適配與資料管理複雜。",
+  },
+  {
+    icon: <Layers className="h-10 w-10 text-cyan-500" />,
+    title: "未來趨勢",
+    description:
+      "隨著行動裝置運算能力提升與專用 AI 晶片普及，Edge AI 正成為下一個技術前沿，特別是行動裝置端 AI 應用。",
   },
 ];
 
@@ -62,7 +62,7 @@ export function MainFeatures() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            Why Choose dchome
+            Edge AI 重點摘要
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -71,8 +71,7 @@ export function MainFeatures() {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Our suite of applications is designed with your needs in mind,
-            providing solutions that make digital life better.
+            將 AI 智慧帶到資料產生現場，兼顧即時性、隱私與效率，正是 Edge AI 的核心價值。
           </motion.p>
         </div>
 
@@ -112,16 +111,16 @@ export function MainFeatures() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-lg flex items-center justify-center">
                 <div className="grid grid-cols-2 gap-4 p-8">
                   <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
-                    <img src="/images/readit-later-icon.png" alt="ReadIt-Later" className="h-16 w-16" />
+                    <div className="text-4xl">🧠</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center opacity-50">
-                    <span className="text-2xl font-bold text-gray-400">+</span>
+                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                    <div className="text-4xl">📱</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center opacity-50">
-                    <span className="text-2xl font-bold text-gray-400">+</span>
+                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                    <div className="text-4xl">⚡</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center opacity-50">
-                    <span className="text-2xl font-bold text-gray-400">+</span>
+                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                    <div className="text-4xl">🛡️</div>
                   </div>
                 </div>
               </div>

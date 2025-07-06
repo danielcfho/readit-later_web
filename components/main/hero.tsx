@@ -47,7 +47,7 @@ export function MainHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Digital solutions<br />for modern living
+          Edge AI Essentials<br /> Bringing Intelligence to the Edge
         </motion.h1>
         
         <motion.p 
@@ -56,8 +56,7 @@ export function MainHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          dchome provides innovative digital tools and applications 
-          to enhance your productivity and lifestyle.
+          Edge AI 將人工智慧運算帶到資料產生的裝置端，實現即時、隱私與高效率的智慧應用。探索其原理、優勢、挑戰與產業應用。
         </motion.p>
         
         <motion.div 
@@ -66,11 +65,11 @@ export function MainHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button size="lg" className="px-8">
-            Explore Our Apps
+          <Button size="lg" className="px-8" onClick={scrollToFeatures}>
+            什麼是 Edge AI？
           </Button>
-          <Button size="lg" variant="outline" className="px-8">
-            Learn More
+          <Button size="lg" variant="outline" className="px-8" asChild>
+            <a href="https://annjose.com/post/edge-ai-essentials/" target="_blank" rel="noopener noreferrer">深入閱讀原文</a>
           </Button>
         </motion.div>
       </motion.div>

@@ -17,6 +17,7 @@ interface BlogTOCProps {
 export function BlogTOC({ content }: BlogTOCProps) {
   const [toc, setToc] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     // 解析標題生成目錄
@@ -42,9 +43,12 @@ export function BlogTOC({ content }: BlogTOCProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries.filter(entry => entry.isIntersecting);
-        if (visibleEntries.length > 0) {
-          setActiveId(visibleEntries[0].target.id);
+        // Only update active section if not manually scrolling
+        if (!isScrolling) {
+          const visibleEntries = entries.filter(entry => entry.isIntersecting);
+          if (visibleEntries.length > 0) {
+            setActiveId(visibleEntries[0].target.id);
+          }
         }
       },
       { rootMargin: "-20% 0% -35% 0%" }
@@ -59,7 +63,7 @@ export function BlogTOC({ content }: BlogTOCProps) {
     });
 
     return () => observer.disconnect();
-  }, [toc]);
+  }, [toc, isScrolling]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,7 +72,24 @@ export function BlogTOC({ content }: BlogTOCProps) {
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Set the clicked section as active immediately
+      setActiveId(id);
+      setIsScrolling(true);
+      
+      // Calculate offset to account for sticky header and add some padding
+      const headerOffset = 120; // Adjust this value based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Reset scrolling flag after animation completes
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000); // Adjust timing based on your scroll animation duration
     }
   };
 

@@ -32,8 +32,47 @@ export default function BlogPostClient({
     });
   };
 
+  // Function to generate heading IDs
+  const generateHeadingId = (text: string) => {
+    return text
+      .toLowerCase()
+      .replace(/[^\w\u4e00-\u9fff\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim();
+  };
+
   // Custom components for ReactMarkdown
   const components = {
+    h1({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h1 id={id} {...props}>{children}</h1>;
+    },
+    h2({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h2 id={id} {...props}>{children}</h2>;
+    },
+    h3({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h3 id={id} {...props}>{children}</h3>;
+    },
+    h4({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h4 id={id} {...props}>{children}</h4>;
+    },
+    h5({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h5 id={id} {...props}>{children}</h5>;
+    },
+    h6({ children, ...props }: any) {
+      const text = String(children);
+      const id = generateHeadingId(text);
+      return <h6 id={id} {...props}>{children}</h6>;
+    },
     code({ className, children, ...props }: any) {
       const match = /language-(\w+)/.exec(className || '');
       const language = match ? match[1] : '';

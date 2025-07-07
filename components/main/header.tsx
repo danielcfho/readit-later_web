@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function MainHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,15 +33,15 @@ export function MainHeader() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
           scrolled
-            ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
-            : "bg-transparent py-5"
+            ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm py-3"
+            : "bg-transparent dark:bg-transparent py-5"
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="flex items-center space-x-2 text-xl font-medium"
+              className="flex items-center space-x-2 text-xl font-medium text-gray-900 dark:text-gray-100"
             >
               <img src="/icon.svg" alt="dchome Logo" className="h-8 w-8" />
               <span>dchome</span>
@@ -50,20 +51,20 @@ export function MainHeader() {
             <nav className="hidden md:flex items-center space-x-8">
               <Link
                 href="#features"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               >
                 Features
               </Link>
               
               <Link
                 href="/blog"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               >
                 Blog
               </Link>
               
               <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors">
                   Apps <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
@@ -93,10 +94,12 @@ export function MainHeader() {
               
               <Link
                 href="#contact"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors"
               >
                 Contact
               </Link>
+              
+              <ThemeToggle />
               
               <Button variant="default" size="sm">
                 Get Started
@@ -111,17 +114,17 @@ export function MainHeader() {
             >
               <div className="space-y-1.5">
                 <span 
-                  className={`block h-0.5 w-6 bg-gray-700 transition-all duration-300 ${
+                  className={`block h-0.5 w-6 bg-gray-700 dark:bg-gray-300 transition-all duration-300 ${
                     mobileMenuOpen ? "translate-y-2 rotate-45" : ""
                   }`}
                 ></span>
                 <span 
-                  className={`block h-0.5 w-6 bg-gray-700 transition-all duration-300 ${
+                  className={`block h-0.5 w-6 bg-gray-700 dark:bg-gray-300 transition-all duration-300 ${
                     mobileMenuOpen ? "opacity-0" : ""
                   }`}
                 ></span>
                 <span 
-                  className={`block h-0.5 w-6 bg-gray-700 transition-all duration-300 ${
+                  className={`block h-0.5 w-6 bg-gray-700 dark:bg-gray-300 transition-all duration-300 ${
                     mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
                   }`}
                 ></span>
@@ -139,13 +142,13 @@ export function MainHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[60px] left-0 right-0 z-40 bg-white shadow-lg md:hidden"
+            className="fixed top-[60px] left-0 right-0 z-40 bg-white dark:bg-gray-900 shadow-lg md:hidden"
           >
             <div className="py-4 px-4">
               <nav className="flex flex-col space-y-4">
                 <Link
                   href="#features"
-                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Features
@@ -153,24 +156,24 @@ export function MainHeader() {
                 
                 <Link
                   href="/blog"
-                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Blog
                 </Link>
                 
                 <div className="py-2">
-                  <div className="text-base font-medium text-gray-700 mb-2">Apps</div>
+                  <div className="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Apps</div>
                   <Link
                     href="/readit-later"
-                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 pl-4 block"
+                    className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors py-2 pl-4 block"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     ReadIt-Later
                   </Link>
                   <Link
                     href="/actionscam"
-                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 pl-4 block"
+                    className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors py-2 pl-4 block"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     ActionsCam
@@ -179,15 +182,18 @@ export function MainHeader() {
                 
                 <Link
                   href="#contact"
-                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors py-2"
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contact
                 </Link>
                 
-                <Button variant="default" size="sm" className="w-full">
-                  Get Started
-                </Button>
+                <div className="flex items-center justify-between w-full pt-2">
+                  <ThemeToggle />
+                  <Button variant="default" size="sm" className="flex-1 ml-4">
+                    Get Started
+                  </Button>
+                </div>
               </nav>
             </div>
           </motion.div>

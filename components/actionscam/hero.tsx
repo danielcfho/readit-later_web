@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { StoreButton } from "@/components/ui/store-button";
@@ -9,6 +9,7 @@ import { ChevronDown, Play, Zap, Shield, Smartphone } from "lucide-react";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -18,6 +19,10 @@ export function Hero() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   function scrollToFeatures() {
     const featuresSection = document.getElementById("features");
@@ -29,13 +34,13 @@ export function Hero() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 flex flex-col justify-center items-center pt-24"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-yellow-950/20 dark:bg-gray-900 flex flex-col justify-center items-center pt-24"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div 
           style={{ opacity }}
-          className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1),transparent_70%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.2),transparent_70%)]"
         />
         <motion.div
           animate={{
@@ -47,7 +52,7 @@ export function Hero() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-orange-200 to-red-200 rounded-full opacity-20"
+          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-orange-200 to-red-200 dark:from-orange-400/30 dark:to-red-400/30 rounded-full opacity-20"
         />
         <motion.div
           animate={{
@@ -60,7 +65,7 @@ export function Hero() {
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full opacity-20"
+          className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-br from-yellow-200 to-orange-200 dark:from-yellow-400/30 dark:to-orange-400/30 rounded-full opacity-20"
         />
       </div>
       
@@ -90,7 +95,7 @@ export function Hero() {
 
         {/* Main Headline */}
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-6 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -103,7 +108,7 @@ export function Hero() {
         
         {/* Subheadline */}
         <motion.p 
-          className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -118,17 +123,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-            <Zap className="h-4 w-4 text-orange-600" />
-            <span className="text-sm font-medium text-gray-700">Real-time Recognition</span>
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <Zap className="h-4 w-4 text-orange-600 dark:text-orange-500" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Real-time Recognition</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-            <Shield className="h-4 w-4 text-orange-600" />
-            <span className="text-sm font-medium text-gray-700">Privacy First</span>
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <Shield className="h-4 w-4 text-orange-600 dark:text-orange-500" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Privacy First</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-            <Smartphone className="h-4 w-4 text-orange-600" />
-            <span className="text-sm font-medium text-gray-700">iPhone XR+</span>
+          <div className="flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+            <Smartphone className="h-4 w-4 text-orange-600 dark:text-orange-500" />
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">iPhone XR+</span>
           </div>
         </motion.div>
         
@@ -144,7 +149,7 @@ export function Hero() {
             href="https://apps.apple.com/hk/app/actionscam/id6747068551"
             className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
           />
-          <span className="text-sm text-gray-600 mt-3">
+          <span className="text-sm text-gray-600 dark:text-gray-400 mt-3">
             Compatible with iPhone XR and newer
           </span>
         </motion.div>
@@ -158,18 +163,29 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <div className="relative aspect-[16/10] w-full bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-2xl overflow-hidden">
-          {/* ActionsCam Demo Video */}
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="/videos/ActionsCam_Web.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="relative aspect-[16/10] w-full bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl shadow-2xl overflow-hidden">
+          {/* ActionsCam Demo Video - Only render on client */}
+          {isClient && (
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            >
+              <source src="/videos/ActionsCam_Web.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+          {/* Fallback placeholder while loading */}
+          {!isClient && (
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-200 to-red-200 dark:from-orange-800/50 dark:to-red-800/50 flex items-center justify-center">
+              <div className="text-orange-600 dark:text-orange-400">
+                <Play className="h-16 w-16" />
+              </div>
+            </div>
+          )}
         </div>
       </motion.div>
       
@@ -183,10 +199,10 @@ export function Hero() {
       >
         <button 
           onClick={scrollToFeatures}
-          className="p-3 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:bg-white hover:shadow-lg transition-all duration-300 hover:scale-110"
+          className="p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-md hover:bg-white dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Scroll to features"
         >
-          <ChevronDown className="h-6 w-6 text-orange-600" />
+          <ChevronDown className="h-6 w-6 text-orange-600 dark:text-orange-500" />
         </button>
       </motion.div>
     </div>

@@ -8,7 +8,7 @@ import { ScrollToTop } from "@/components/actionscam/scroll-to-top";
 
 export default function ActionsCam() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white dark:bg-gray-900">
       <Header />
       <Hero />
       <Features />

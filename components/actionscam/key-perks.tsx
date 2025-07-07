@@ -23,7 +23,7 @@ const perks = [
 
 export function KeyPerks() {
   return (
-    <section id="benefits" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section id="benefits" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,13 +32,13 @@ export function KeyPerks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
             Get Moving,{" "}
             <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
               Get Learning!
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             With ActionsCam, language learning isn&apos;t about memorizing words—it&apos;s about living them. 
             Powered by SmolVLM2 and Apple&apos;s MLX for fast, accurate, and fun lessons.
           </p>
@@ -57,10 +57,10 @@ export function KeyPerks() {
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <perk.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
                 {perk.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {perk.description}
               </p>
             </motion.div>
@@ -73,33 +73,33 @@ export function KeyPerks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center bg-white rounded-3xl p-8 md:p-12 shadow-lg"
+          className="text-center bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-lg"
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
               Ready to Transform Your Language Learning?
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Download ActionsCam today and start speaking a new language with every move you make! 
               Fast, accurate, and fun lessons right in your pocket.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-gray-600">One-time purchase</span>
+                <CheckCircle className="h-5 w-5 text-green-500 dark:text-green-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-300">One-time purchase</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-gray-600">No ads</span>
+                <CheckCircle className="h-5 w-5 text-green-500 dark:text-green-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-300">No ads</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-gray-600">Privacy focused</span>
+                <CheckCircle className="h-5 w-5 text-green-500 dark:text-green-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-300">Privacy focused</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-sm text-gray-600">Works offline</span>
+                <CheckCircle className="h-5 w-5 text-green-500 dark:text-green-400" />
+                <span className="text-sm text-gray-600 dark:text-gray-300">Works offline</span>
               </div>
             </div>
           </div>

@@ -44,7 +44,7 @@ const perks = [
 
 export function KeyPerks() {
   return (
-    <section id="perks" className="py-24 bg-white">
+    <section id="perks" className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-20">
           <motion.h2
@@ -52,7 +52,7 @@ export function KeyPerks() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Five Key Perks
           </motion.h2>
@@ -61,7 +61,7 @@ export function KeyPerks() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             ReadIt-Later brings you powerful features designed to transform your
             reading experience from chaotic to calm.

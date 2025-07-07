@@ -41,7 +41,7 @@ const applications = [
 
 export function EdgeAIApplications() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.h2
@@ -49,7 +49,7 @@ export function EdgeAIApplications() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Edge AI 真實應用場景
           </motion.h2>
@@ -58,7 +58,7 @@ export function EdgeAIApplications() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
             從零售到車聯網，Edge AI 正在各個產業創造革命性的應用體驗
           </motion.p>
@@ -72,16 +72,16 @@ export function EdgeAIApplications() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-lg border hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
-                <div className={`p-3 rounded-lg bg-${app.color}-100 mr-4`}>
+                <div className={`p-3 rounded-lg bg-${app.color}-100 dark:bg-${app.color}-900/30 mr-4`}>
                   {app.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">{app.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{app.title}</h3>
               </div>
               
-              <p className="text-gray-600 mb-4">{app.description}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">{app.description}</p>
               
               <div className="space-y-2">
                 {app.details.map((detail, detailIndex) => (
@@ -91,7 +91,7 @@ export function EdgeAIApplications() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.2 + detailIndex * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center text-sm text-gray-700"
+                    className="flex items-center text-sm text-gray-700 dark:text-gray-300"
                   >
                     <div className={`w-2 h-2 bg-${app.color}-500 rounded-full mr-3 flex-shrink-0`} />
                     {detail}
@@ -100,7 +100,7 @@ export function EdgeAIApplications() {
               </div>
 
               {/* Interactive animation based on application type */}
-              <div className="mt-6 relative h-16 bg-gray-50 rounded-lg overflow-hidden">
+              <div className="mt-6 relative h-16 bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden">
                 {app.title === "智慧零售" && (
                   <motion.div
                     animate={{ x: [10, 60, 10] }}

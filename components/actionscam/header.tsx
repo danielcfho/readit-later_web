@@ -6,6 +6,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,15 +28,15 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent dark:bg-transparent py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center space-x-2 text-xl font-medium text-gray-900 hover:text-orange-600 transition-colors"
+            className="flex items-center space-x-2 text-xl font-medium text-gray-900 dark:text-gray-100 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
           >
             <Image
               src="/images/actionscam/actionscam_logo.png"
@@ -50,33 +51,40 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#features"
-              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400 transition-colors"
             >
               Features
             </Link>
             <Link
               href="#benefits"
-              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400 transition-colors"
             >
               Benefits
             </Link>
             <Link
               href="#download"
-              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 dark:text-gray-300 dark:hover:text-orange-400 transition-colors"
             >
               Download
             </Link>
           </nav>
 
-          <Button 
-            variant="default" 
-            size="sm"
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0"
-          >
-            <Link href="https://apps.apple.com/hk/app/actionscam/id6747068551" target="_blank" rel="noopener noreferrer">
-              Get App
-            </Link>
-          </Button>
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            <Button
+              variant="default"
+              size="sm"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0"
+            >
+              <Link
+                href="https://apps.apple.com/hk/app/actionscam/id6747068551"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get App
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </motion.header>

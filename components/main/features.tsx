@@ -52,7 +52,7 @@ export function MainFeatures() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="py-24 bg-white dark:bg-gray-900 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.h2
@@ -60,7 +60,7 @@ export function MainFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Edge AI 重點摘要
           </motion.h2>
@@ -69,7 +69,7 @@ export function MainFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             將 AI 智慧帶到資料產生現場，兼顧即時性、隱私與效率，正是 Edge AI 的核心價值。
           </motion.p>
@@ -92,8 +92,8 @@ export function MainFeatures() {
                 >
                   <div className="flex-shrink-0 mr-4">{feature.icon}</div>
                   <div>
-                    <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <h3 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">{feature.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -108,18 +108,18 @@ export function MainFeatures() {
               viewport={{ once: true }}
               className="relative aspect-square w-full max-w-sm mx-auto"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-lg flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 rounded-2xl shadow-lg flex items-center justify-center">
                 <div className="grid grid-cols-2 gap-4 p-8">
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center">
                     <div className="text-4xl">🧠</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center">
                     <div className="text-4xl">📱</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center">
                     <div className="text-4xl">⚡</div>
                   </div>
-                  <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center">
                     <div className="text-4xl">🛡️</div>
                   </div>
                 </div>

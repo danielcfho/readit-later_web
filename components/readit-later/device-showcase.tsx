@@ -63,7 +63,7 @@ export function DeviceShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="devices" className="py-24 bg-gray-50">
+    <section id="devices" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6" ref={containerRef}>
         <div className="text-center mb-16">
           <motion.h2
@@ -71,7 +71,7 @@ export function DeviceShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Available on All Your Devices
           </motion.h2>
@@ -80,7 +80,7 @@ export function DeviceShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             ReadIt-Later syncs seamlessly across all your Apple devices,
             providing a consistent reading experience wherever you are.
@@ -122,11 +122,11 @@ export function DeviceShowcase() {
                       transition={{ duration: 0.6 }}
                       className="space-y-6"
                     >
-                      <h3 className="text-2xl font-bold tracking-tight">
+                      <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
                         ReadIt-Later for {device.name}
                       </h3>
-                      <p className="text-lg text-gray-600">
-                        Experience ReadIt-Later's powerful features optimized for your {device.name}.
+                      <p className="text-lg text-gray-600 dark:text-gray-300">
+                        Experience ReadIt-Later&apos;s powerful features optimized for your {device.name}.
                       </p>
 
                       <ul className="space-y-3">
@@ -151,7 +151,7 @@ export function DeviceShowcase() {
                                 d="M5 13l4 4L19 7"
                               />
                             </svg>
-                            <span>{feature}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                           </motion.li>
                         ))}
                       </ul>

@@ -58,7 +58,7 @@ export function Features() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="py-24 bg-white dark:bg-gray-900 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.h2
@@ -66,7 +66,7 @@ export function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Simplify Your Reading Experience
           </motion.h2>
@@ -75,7 +75,7 @@ export function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             ReadIt-Later transforms how you consume content on the web, helping you
             save, organize, and read on your own terms.
@@ -99,8 +99,8 @@ export function Features() {
                 >
                   <div className="flex-shrink-0 mr-4">{feature.icon}</div>
                   <div>
-                    <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <h3 className="text-xl font-medium mb-2 text-gray-900 dark:text-gray-100">{feature.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

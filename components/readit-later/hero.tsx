@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-blue-50 to-white flex flex-col justify-center items-center pt-24"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-gray-900 flex flex-col justify-center items-center pt-24"
     >
       <div className="absolute inset-0 z-0">
         <motion.div 
@@ -45,13 +45,16 @@ export function Hero() {
         className="container mx-auto px-4 z-10 text-center relative mt-16"
       >
         <motion.p className="flex justify-center mb-5">
-          <img 
+          <Image 
             src="/images/readit-later/readit-later_logo.png" 
-            alt="ReadIt-Later Logo" 
+            alt="ReadIt-Later Logo"
+            width={120}
+            height={120}
+            className="object-contain"
           />
         </motion.p>
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
+          className="text-4xl md:text-6xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -60,7 +63,7 @@ export function Hero() {
         </motion.h1>
         
         <motion.p 
-          className="text-lg md:text-xl text-gray-700 mb-2 max-w-3xl mx-auto"
+          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-2 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -79,11 +82,11 @@ export function Hero() {
         >
           <div className="flex flex-col items-center">
             <StoreButton storeName="App Store" />
-            <span className="text-sm text-gray-600 mt-2">for iPhone, iPad, and AppleWatch</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400 mt-2">for iPhone, iPad, and AppleWatch</span>
           </div>
           <div className="flex flex-col items-center">
             <StoreButton storeName="Mac App Store" />
-            <span className="text-sm text-gray-600 mt-2">for Mac</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400 mt-2">for Mac</span>
           </div>
         </motion.div>
       </motion.div>
@@ -115,10 +118,10 @@ export function Hero() {
       >
         <button 
           onClick={scrollToFeatures}
-          className="p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:bg-white transition-colors"
+          className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-md hover:bg-white dark:hover:bg-gray-700 transition-colors"
           aria-label="Scroll to features"
         >
-          <ChevronDown className="h-6 w-6 text-gray-600" />
+          <ChevronDown className="h-6 w-6 text-gray-600 dark:text-gray-300" />
         </button>
       </motion.div>
     </div>

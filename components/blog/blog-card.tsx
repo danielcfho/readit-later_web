@@ -28,7 +28,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-      className={`bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:border-blue-200 transition-all duration-300 ${
+      className={`bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-500 transition-all duration-300 ${
         featured ? 'md:flex md:flex-row' : ''
       }`}
     >
@@ -50,7 +50,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
       
       <div className={`p-6 ${featured ? 'md:w-1/2 md:flex md:flex-col md:justify-between' : ''}`}>
         <div>
-          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               <span>{formatDate(post.date)}</span>
@@ -62,27 +62,27 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
           </div>
           
           <Link href={`/blog/${post.slug}`}>
-            <h3 className={`font-bold text-gray-900 hover:text-blue-600 transition-colors ${
+            <h3 className={`font-bold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
               featured ? 'text-2xl mb-3' : 'text-lg mb-2'
             }`}>
               {post.title}
             </h3>
           </Link>
           
-          <p className={`text-gray-600 mb-4 ${featured ? 'text-base' : 'text-sm'}`}>
+          <p className={`text-gray-600 dark:text-gray-300 mb-4 ${featured ? 'text-base' : 'text-sm'}`}>
             {post.excerpt}
           </p>
           
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Link href={`/blog/category/${encodeURIComponent(post.category)}`}>
-                <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200">
+                <Badge variant="secondary" className="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 dark:text-gray-200">
                   {post.category}
                 </Badge>
               </Link>
               {post.tags.slice(0, 2).map((tag) => (
                 <Link key={tag} href={`/blog/tag/${encodeURIComponent(tag)}`}>
-                  <Badge variant="outline" className="text-xs cursor-pointer hover:bg-gray-100">
+                  <Badge variant="outline" className="text-xs cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:border-gray-600 dark:text-gray-300">
                     #{tag}
                   </Badge>
                 </Link>
@@ -94,7 +94,7 @@ export function BlogCard({ post, featured = false }: BlogCardProps) {
         <div className="mt-4">
           <Link 
             href={`/blog/${post.slug}`}
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium text-sm group transition-colors"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm group transition-colors"
           >
             Read More
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

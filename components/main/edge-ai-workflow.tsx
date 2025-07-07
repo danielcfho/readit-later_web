@@ -32,7 +32,7 @@ const steps = [
 
 export function EdgeAIWorkflow() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.h2
@@ -40,7 +40,7 @@ export function EdgeAIWorkflow() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
           >
             Edge AI 如何運作？
           </motion.h2>
@@ -49,7 +49,7 @@ export function EdgeAIWorkflow() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
             了解 Edge AI 系統的核心運作流程，從模型部署到持續優化的完整循環
           </motion.p>
@@ -73,14 +73,14 @@ export function EdgeAIWorkflow() {
                     className="relative"
                   >
                     {/* Step card */}
-                    <div className="bg-white rounded-2xl p-6 shadow-lg border text-center relative z-10">
-                      <div className={`inline-flex p-4 rounded-full bg-${step.color}-100 mb-4`}>
+                    <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border dark:border-gray-700 text-center relative z-10">
+                      <div className={`inline-flex p-4 rounded-full bg-${step.color}-100 dark:bg-${step.color}-900/30 mb-4`}>
                         {step.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
                         {step.description}
                       </p>
                     </div>
@@ -114,10 +114,10 @@ export function EdgeAIWorkflow() {
                   {step.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
                     {step.description}
                   </p>
                 </div>
@@ -134,41 +134,41 @@ export function EdgeAIWorkflow() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-16 bg-white rounded-2xl p-8 shadow-lg border"
+            className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <div className="text-center mb-8">
               <Zap className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                 關鍵優勢
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Edge AI 運作流程帶來的核心價值
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-green-600 font-bold">⚡</span>
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">離線運作</h4>
-                <p className="text-sm text-gray-600">推論過程完全離線，無需網路連線</p>
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">離線運作</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">推論過程完全離線，無需網路連線</p>
               </div>
 
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-blue-600 font-bold">🛡️</span>
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">隱私保護</h4>
-                <p className="text-sm text-gray-600">資料處理在本地，保護敏感資訊</p>
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">隱私保護</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">資料處理在本地，保護敏感資訊</p>
               </div>
 
               <div className="text-center">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-purple-600 font-bold">🔄</span>
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">持續學習</h4>
-                <p className="text-sm text-gray-600">中央管理與本地處理完美結合</p>
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">持續學習</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">中央管理與本地處理完美結合</p>
               </div>
             </div>
           </motion.div>

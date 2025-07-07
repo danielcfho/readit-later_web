@@ -39,7 +39,7 @@ const features = [
 
 export function DeviceShowcase() {
   return (
-    <section id="showcase" className="py-20 bg-white overflow-hidden">
+    <section id="showcase" className="py-20 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Device mockup */}
@@ -72,12 +72,12 @@ export function DeviceShowcase() {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-4 top-10 w-8 h-8 bg-orange-200 rounded-full opacity-40"
+                className="absolute -right-4 top-10 w-8 h-8 bg-orange-200 dark:bg-orange-400/30 rounded-full opacity-40"
               />
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-4 bottom-20 w-6 h-6 bg-red-200 rounded-full opacity-40"
+                className="absolute -left-4 bottom-20 w-6 h-6 bg-red-200 dark:bg-red-400/30 rounded-full opacity-40"
               />
             </div>
           </motion.div>
@@ -91,13 +91,13 @@ export function DeviceShowcase() {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
                 Powered by{" "}
                 <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                   Advanced AI
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                 ActionsCam leverages state-of-the-art machine learning models to provide 
                 real-time action recognition and language learning in your pocket.
               </p>
@@ -118,10 +118,10 @@ export function DeviceShowcase() {
                       <feature.icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">
+                      <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 dark:text-gray-300">
                         {feature.description}
                       </p>
                     </div>

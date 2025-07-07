@@ -51,7 +51,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+    <section id="features" className="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-yellow-950/20 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,13 +60,13 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
             Why ActionsCam{" "}
             <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
               Stands Out
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Revolutionary features that make language learning through movement both effective and enjoyable
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ export function Features() {
               transition={{ duration: 0.8, delay: index * 0.15 }}
               className="group"
             >
-              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20`}>
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 dark:border-gray-700/20`}>
                 {/* Image Section */}
                 <div className="flex-1 w-full max-w-sm">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -103,11 +103,11 @@ export function Features() {
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <feature.icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
                       {feature.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

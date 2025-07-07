@@ -6,8 +6,9 @@ import Link from "next/link";
 import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
+import { useTheme } from "next-themes";
 import { BlogPost } from "@/lib/blog/posts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,8 @@ export default function BlogPostClient({
   post,
   relatedPosts,
 }: BlogPostClientProps) {
+  const { theme } = useTheme();
+  
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -81,7 +84,7 @@ export default function BlogPostClient({
       if (isInline) {
         return (
           <code 
-            className="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono"
+            className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-1.5 py-0.5 rounded text-sm font-mono"
             {...props}
           >
             {children}
@@ -92,12 +95,12 @@ export default function BlogPostClient({
       return (
         <div className="relative p-2">
           <div className="absolute top-3 right-3 z-10">
-            <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-mono">
+            <span className="bg-gray-700 dark:bg-gray-600 text-gray-300 dark:text-gray-200 px-2 py-1 rounded text-xs font-mono">
               {language || 'code'}
             </span>
           </div>
           <SyntaxHighlighter
-            style={oneDark}
+            style={theme === 'dark' ? oneLight : oneDark}
             language={language || 'text'}
             PreTag="div"
             className="rounded-lg !mt-0 !mb-0"
@@ -116,12 +119,12 @@ export default function BlogPostClient({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Back Button */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-10">
+      <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-100 dark:border-gray-700 sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <Link href="/blog">
-            <Button variant="ghost" size="sm" className="hover:bg-blue-50 hover:text-blue-600 transition-colors">
+            <Button variant="ghost" size="sm" className="hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Blog
             </Button>
@@ -137,7 +140,7 @@ export default function BlogPostClient({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700"
             >
               {/* Article Header Image */}
               <div className="relative aspect-video">
@@ -158,8 +161,13 @@ export default function BlogPostClient({
               </div>
 
               <div className="p-8">
+                {/* Article Title */}
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
+                  {post.title}
+                </h1>
+
                 {/* Article Meta */}
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
+                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-6">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     <span>{formatDate(post.date)}</span>
@@ -169,7 +177,7 @@ export default function BlogPostClient({
                     <span>{post.author}</span>
                   </div>
                   <Link href={`/blog/category/${encodeURIComponent(post.category)}`}>
-                    <Badge variant="secondary" className="hover:bg-blue-100 hover:text-blue-700 cursor-pointer transition-colors">
+                    <Badge variant="secondary" className="hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-colors">
                       {post.category}
                     </Badge>
                   </Link>
@@ -179,7 +187,7 @@ export default function BlogPostClient({
                 <div className="flex flex-wrap gap-2 mb-8">
                   {post.tags.map((tag) => (
                     <Link key={tag} href={`/blog/tag/${encodeURIComponent(tag)}`}>
-                      <Badge variant="outline" className="hover:bg-purple-50 hover:border-purple-300 hover:text-purple-700 transition-colors">
+                      <Badge variant="outline" className="hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-300 dark:hover:border-purple-600 hover:text-purple-700 dark:hover:text-purple-300 transition-colors">
                         <Tag className="h-3 w-3 mr-1" />
                         {tag}
                       </Badge>
@@ -188,12 +196,12 @@ export default function BlogPostClient({
                 </div>
 
                 {/* Excerpt */}
-                <blockquote className="text-ellipsis italic  text-gray-400 mb-8 leading-relaxed">
+                <blockquote className="text-ellipsis italic text-gray-500 dark:text-gray-300 mb-8 leading-relaxed border-l-4 border-blue-200 dark:border-blue-600 pl-4">
                   {post.excerpt}
                 </blockquote>
 
                 {/* Article Content */}
-                <div className="prose prose-lg max-w-none">
+                <div className="prose prose-lg dark:prose-invert max-w-none">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={components}
@@ -216,7 +224,7 @@ export default function BlogPostClient({
                   <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-sm">↗</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Related Articles</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Related Articles</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {relatedPosts.map((relatedPost) => (

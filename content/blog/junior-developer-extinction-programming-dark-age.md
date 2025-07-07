@@ -1,6 +1,6 @@
 ---
 title: "初級開發者的滅絕危機：我們正在建造下一個程式設計黑暗時代"
-slug: "junior-developer-extinction-programming-dark-age"
+excerpt: "junior-developer-extinction-programming-dark-age"
 date: "2025-07-06"
 description: "當AI工具讓程式設計看似變得簡單時，我們正在無意中摧毀整個行業的人才培育生態系統。探討這個隱藏危機如何威脅軟體開發的未來。"
 tags: ["AI", "程式設計", "職涯發展", "軟體工程", "技術趨勢", "人才培育"]

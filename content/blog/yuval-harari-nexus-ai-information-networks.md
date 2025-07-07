@@ -1,6 +1,6 @@
 ---
 title: "《Nexus》：哈拉瑞的AI未來預言 - 地球上的外星智慧挑戰"
-description: "探討 Yuval Noah Harari 的新書《Nexus》如何分析人工智慧對民主社會的威脅，以及資訊網路從石器時代到AI時代的演進史"
+excerpt: "探討 Yuval Noah Harari 的新書《Nexus》如何分析人工智慧對民主社會的威脅，以及資訊網路從石器時代到AI時代的演進史"
 date: "2025-01-07"
 author: "Daniel Ho"
 category: "Technology"

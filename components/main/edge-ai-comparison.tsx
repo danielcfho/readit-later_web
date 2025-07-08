@@ -1,9 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cloud, Smartphone, Zap, Shield, Wifi, WifiOff } from "lucide-react";
+import { Cloud, Smartphone, Laptop, Zap, Shield, Wifi, WifiOff } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
 
 export function EdgeAIComparison() {
+  // 新增動畫距離計算
+  const cloudRef = useRef<HTMLDivElement>(null);
+  const phoneRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [moveX, setMoveX] = useState(0);
+
+  useEffect(() => {
+    function updateMoveX() {
+      if (cloudRef.current && phoneRef.current && containerRef.current) {
+        const left = phoneRef.current.getBoundingClientRect().left;
+        const right = cloudRef.current.getBoundingClientRect().right-25;
+        setMoveX(right - left);
+      }
+    }
+    updateMoveX();
+    window.addEventListener('resize', updateMoveX);
+    return () => window.removeEventListener('resize', updateMoveX);
+  }, []);
+
   return (
     <section className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
@@ -63,17 +83,23 @@ export function EdgeAIComparison() {
             </div>
 
             {/* Animation: Data flow to cloud */}
-            <div className="mt-6 relative h-20 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+            <div className="mt-6 relative h-20 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden" ref={containerRef}>
               <motion.div
-                animate={{ x: [0, 200, 0] }}
+                animate={{ x: [40, moveX, 40] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full"
               />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <Cloud className="h-6 w-6 text-blue-500" />
+              <div
+                className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                ref={cloudRef}
+              >
+                <Cloud className="h-8 w-8 text-blue-500" />
               </div>
-              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                <Smartphone className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+              <div
+                className="absolute left-4 top-1/2 transform -translate-y-1/2"
+                ref={phoneRef}
+              >
+                <Smartphone className="h-8 w-8 text-gray-600 dark:text-gray-400" />
               </div>
             </div>
           </motion.div>
@@ -114,12 +140,12 @@ export function EdgeAIComparison() {
             {/* Animation: Local processing */}
             <div className="mt-6 relative h-20 bg-green-100 dark:bg-green-800/30 rounded-lg overflow-hidden">
               <motion.div
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+                animate={{ scale: [1, 1.8, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-green-500 rounded-full"
+                className="absolute top-1/3 left-4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-green-500 rounded-full"
               />
               <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                <Smartphone className="h-6 w-6 text-green-600" />
+                <Smartphone className="h-8 w-8 text-green-600" />
               </div>
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-sm text-green-600 dark:text-green-400 font-medium">
                 本地處理

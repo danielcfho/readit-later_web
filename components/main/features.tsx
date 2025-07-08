@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Layers, Shield, Zap, Globe } from "lucide-react";
@@ -50,6 +50,11 @@ const item = {
 export function MainFeatures() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, amount: 0.2 });
+	const [isClient, setIsClient] = useState(false);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 
 	return (
 		<section id="features" className="py-24 bg-white dark:bg-gray-900 relative">
@@ -109,14 +114,16 @@ export function MainFeatures() {
 							className="relative aspect-[4/3] w-full max-w-xl mx-auto"
 						>
 							<div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 rounded-2xl shadow-lg flex items-center justify-center">
-								<video
-									src="videos/edgeai.mp4"
-									autoPlay
-									loop
-									muted
-									playsInline
-									style={{ borderRadius: '1rem', width: '100%', height: '100%', objectFit: 'cover' }}
-								/>
+								{isClient && (
+									<video
+										src="videos/edgeai.mp4"
+										autoPlay
+										loop
+										muted
+										playsInline
+										style={{ borderRadius: '1rem', width: '100%', height: '100%', objectFit: 'cover' }}
+									/>
+								)}
 							</div>
 						</motion.div>
 					</div>

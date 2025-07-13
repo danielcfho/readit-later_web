@@ -5,7 +5,7 @@ excerpt: "探索手機端 AI 如何改變我們的日常生活，從即時翻譯
 category: "AI"
 tags: ["AI", "手機", "邊緣運算", "裝置端AI", "智慧手機"]
 author: "dchome"
-featured: true
+featured: false
 image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 ---
 

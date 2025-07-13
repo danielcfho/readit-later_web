@@ -5,7 +5,7 @@ excerpt: "透過分析 400 萬次 AI 對話記錄，深入探討 AI 對各行各
 category: "AI"
 tags: ["AI", "人工智慧", "工作", "職場", "未來趨勢", "技術發展"]
 author: "dchome"
-featured: true
+featured: false
 image: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ---
 
